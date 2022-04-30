@@ -3,17 +3,24 @@ import "./styles";
 const onClickAdd = () => {
   const inputText = document.getElementById("addtext").value;
   document.getElementById("addtext").value = "";
+  const task = document.createElement("span");
+  task.className = "taskName";
+  task.innerText = inputText;
   const li = document.createElement("li");
   li.className = "list-row";
-  li.innerHTML = inputText;
+  li.appendChild(task);
   const completebutton = document.createElement("button");
   completebutton.innerText = "完了";
   completebutton.addEventListener("click", () => {
     const deleteTarget = completebutton.parentNode;
-    const addTarget = deleteTarget.parentNode.firstElementChild.innerText;
+    const addTarget = deleteTarget.firstElementChild;
     deleteFromList("todo-list", deleteTarget);
     //const addTarget = deleteTarget.parentNode.firstElementChild.innerText;
-    console.log(addTarget);
+    //console.log(addTarget);
+    const listToAdd = document.createElement("li");
+    listToAdd.className = "list-row";
+    listToAdd.appendChild(addTarget);
+    document.getElementById("complete-list").appendChild(listToAdd);
   });
   li.appendChild(completebutton);
 
