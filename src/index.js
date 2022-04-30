@@ -9,13 +9,17 @@ const onClickAdd = () => {
   const completebutton = document.createElement("button");
   completebutton.innerText = "完了";
   completebutton.addEventListener("click", () => {
-    alert("done");
+    const done = completebutton.parentNode;
+    document.getElementById("complete-list").appendChild(done);
+    document.getElementById("todo-list").removeChild(done);
   });
   li.appendChild(completebutton);
 
   const deletebutton = document.createElement("button");
   deletebutton.innerText = "削除";
   deletebutton.addEventListener("click", () => {
+    const deleteTarget = deletebutton.parentNode;
+    document.getElementById("todo-list").removeChild(deleteTarget);
     deletebutton.parentElement.remove();
   });
   li.appendChild(deletebutton);
