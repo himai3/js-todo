@@ -15,11 +15,15 @@ const onClickAdd = () => {
     const deleteTarget = completebutton.parentNode;
     const addTarget = deleteTarget.firstElementChild;
     deleteFromList("todo-list", deleteTarget);
-    //const addTarget = deleteTarget.parentNode.firstElementChild.innerText;
-    //console.log(addTarget);
     const listToAdd = document.createElement("li");
     listToAdd.className = "list-row";
     listToAdd.appendChild(addTarget);
+
+    const backButton = document.createElement("button");
+    backButton.innerText = "戻す";
+
+    listToAdd.appendChild(backButton);
+
     document.getElementById("complete-list").appendChild(listToAdd);
   });
   li.appendChild(completebutton);
