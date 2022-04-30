@@ -8,10 +8,16 @@ const onClickAdd = () => {
   li.innerHTML = inputText;
   const completebutton = document.createElement("button");
   completebutton.innerText = "完了";
+  completebutton.addEventListener("click", () => {
+    alert("done");
+  });
   li.appendChild(completebutton);
 
   const deletebutton = document.createElement("button");
   deletebutton.innerText = "削除";
+  deletebutton.addEventListener("click", () => {
+    alert("delete");
+  });
   li.appendChild(deletebutton);
 
   document.getElementById("todo-list").appendChild(li);
