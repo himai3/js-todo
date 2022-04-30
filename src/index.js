@@ -10,11 +10,10 @@ const onClickAdd = () => {
   completebutton.innerText = "完了";
   completebutton.addEventListener("click", () => {
     const deleteTarget = completebutton.parentNode;
-    console.log(deleteTarget);
+    const addTarget = deleteTarget.parentNode.firstElementChild.innerText;
     deleteFromList("todo-list", deleteTarget);
-    //document.getElementById("todo-list").removeChild(deleteTarget);
-    //document.getElementById("complete-list").removeChild(deleteTarget);
-    //document.getElementById("todo-list").removeChild(done);
+    //const addTarget = deleteTarget.parentNode.firstElementChild.innerText;
+    console.log(addTarget);
   });
   li.appendChild(completebutton);
 
@@ -22,8 +21,7 @@ const onClickAdd = () => {
   deletebutton.innerText = "削除";
   deletebutton.addEventListener("click", () => {
     const deleteTarget = deletebutton.parentNode;
-    document.getElementById("todo-list").removeChild(deleteTarget);
-    deletebutton.parentElement.remove();
+    deleteFromList("todo-list", deleteTarget);
   });
   li.appendChild(deletebutton);
 
