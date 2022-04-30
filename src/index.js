@@ -1,9 +1,10 @@
 import "./styles";
 
 const onClickAdd = () => {
-  console.log("eee");
+  const inputText = document.getElementById("addtext").value;
+  document.getElementById("addtext").value = "";
 };
 
 document
   .getElementById("addbutton")
-  .addEventListener("click", () => onClickAdd);
+  .addEventListener("click", () => onClickAdd());
